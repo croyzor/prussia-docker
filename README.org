@@ -2,14 +2,14 @@ Creates a docker image for developing ps2 applications with [[https://github.com
 
 It is based on the [[https://github.com/ps2dev/ps2dev-docker/blob/master/Dockerfile][ps2dev-docker]] project developed by Naomi Peori. I switched it back from an alpine to a debian base simply because that's what I'm more comfortable developing with.
 
-* Usage
+** Usage
 - Build with =docker build -t prussia .=
 - Run with =docker run -v$PWD:/build prussia=
 
-* Note
+** Note
 This isn't as neat as using =ps2dev-docker=, since running a new container means installing project-specific cargo dependencies. It would be preferable to create one container from the =prussia= image and re-use that when doing incremental builds.
 
-* TODO: 
+** TODO: 
 - Is it redundant to install ps2-toolchain /and/ binutils?
 - Better handle sourcing from =.cargo/env=
 - Switch base back to alpine to reduce size?
